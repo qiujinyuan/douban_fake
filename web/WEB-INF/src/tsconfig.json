@@ -1,11 +1,17 @@
 {
     "compilerOptions": {
-        "module": "AMD",
+        // "module": "CommonJS", // 用于生成 nodeJS 代码
+        "module": "AMD", // 用于生成 requireJS 的用于 web 应用的 js 代码
         "noImplicitAny": true,
         "removeComments": true,
         "preserveConstEnums": true,
         // "outFile": "../../built/local/tsc.js",
-        "sourceMap": false
+        "sourceMap": false,
+        "baseUrl": ".", // This must be specified if "paths" is.
+        "paths": {
+            "lodash": ["node_modules/@types/lodash"] // 此处映射是相对于"baseUrl"
+        },
+        "traceResolution": true
     },
     "include": [
         "app"
@@ -13,7 +19,7 @@
     "exclude": [
         "node_modules",
         "**/*.spec.ts",
-        "lib",
-        "views"
+        "views",
+        "lib"
     ]
 }
