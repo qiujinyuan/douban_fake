@@ -10,10 +10,10 @@ import customName from "./model/export-default";
 
 // TypeScript加载模块，加载 node_module/@types/lodash/index.d.ts 文件声明的模块
 // 或是用于 nodeJS 加载模块，需要将模块加载方式修改为 "CommonJS"；启动 nodeJS 服务
-// import _ = require("lodash");
+import _ = require("lodash");
 
 // 用于 RequireJS 在 web 应用下加载 lodash.js 文件
-import _ = require("../lib/lodash");
+// import _ = require("../lib/lodash");
 
 // console.log(multiply(1, 2));
 v1();
