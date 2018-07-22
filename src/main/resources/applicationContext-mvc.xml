@@ -13,7 +13,7 @@
     <!-- html视图解析器 必须先配置freemarkerConfig,注意html是没有prefix前缀属性的-->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath">
-            <value>/WEB-INF/src/views/</value>
+            <value>/WEB-INF/dist/</value>
         </property>
         <property name="freemarkerSettings">
             <props>
@@ -35,5 +35,7 @@
     </bean>
 
     <!--静态资源映射-->
-    <mvc:resources location="WEB-INF/src/" mapping="src/**" />
+    <mvc:resources location="WEB-INF/dist/" mapping="/*.js" />
+    <mvc:resources location="WEB-INF/lib/" mapping="/lib/*.js" />
+
 </beans>
