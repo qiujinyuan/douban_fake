@@ -1,4 +1,4 @@
-package com.yuang.bbs.po;
+package com.yuang.douban.po;
 
 /**
  * 用户

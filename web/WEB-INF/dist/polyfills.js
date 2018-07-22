@@ -5438,10 +5438,11 @@ __webpack_require__.r(__webpack_exports__);
 // Used for reflect-metadata in JIT. If you use AOT (and only Angular decorators), you can remove.
 
 /**
- * Required to support Web Animations `@angular/platform-browser/animations`.
- * Needed for: All but Chrome, Firefox and Opera. http://caniuse.com/#feat=web-animation
+ * Web Animations `@angular/platform-browser/animations`
+ * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
+ * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
  **/
-// import 'web-animations-js';
+// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
@@ -5472,7 +5473,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\Java\training\bbs_one_min\web\WEB-INF\angular-tour-of-heroes\src\polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! d:\Java\training\douban_fake\web\WEB-INF\douban\src\polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

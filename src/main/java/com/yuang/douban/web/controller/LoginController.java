@@ -1,7 +1,7 @@
-package com.yuang.bbs.web.controller;
+package com.yuang.douban.web.controller;
 
-import com.yuang.bbs.po.User;
-import com.yuang.bbs.po.model.Response;
+import com.yuang.douban.po.User;
+import com.yuang.douban.po.model.Response;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

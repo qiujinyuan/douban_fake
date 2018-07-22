@@ -1,4 +1,4 @@
-package com.yuang.bbs.config;
+package com.yuang.douban.config;
 
 import org.apache.log4j.Logger;
 import org.apache.logging.log4j.core.config.ConfigurationSource;

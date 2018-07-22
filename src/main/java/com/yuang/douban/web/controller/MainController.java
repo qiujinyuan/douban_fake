@@ -1,11 +1,10 @@
-package com.yuang.bbs.web.controller;
+package com.yuang.douban.web.controller;
 
-import com.yuang.bbs.po.Hero;
+import com.yuang.douban.po.Hero;
+import com.yuang.douban.po.model.Response;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,6 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class MainController {
-
 
     /**
      * 配置多个访问路径，用于当刷新页面时浏览器发出请求时找不到资源返回 404
@@ -35,8 +33,13 @@ public class MainController {
 
     @RequestMapping(value = "api/heroes", method = RequestMethod.GET)
     @ResponseBody
-    public List<Hero> getHeroes() {
+    public List<Hero> getHeroes(@RequestParam(value = "name", required = false) String name) {
         List<Hero> heroes = new ArrayList<>();
+        if (!StringUtils.isEmpty(name)) {
+            heroes.add(new Hero(1, "user01"));
+            heroes.add(new Hero(2, "user02"));
+            return heroes;
+        }
         heroes.add(new Hero(1, "Narco"));
         heroes.add(new Hero(2, "Bombasto"));
         heroes.add(new Hero(3, "Celeritas"));
@@ -52,4 +55,27 @@ public class MainController {
     public Hero getHero(@PathVariable("id") Integer id) {
         return new Hero(7, "Dynama");
     }
+
+    @RequestMapping(value = "api/heroes", method = RequestMethod.PUT)
+    @ResponseBody
+    public Response updateHero(@RequestBody Hero hero) {
+        System.out.println("MainController.updateHero" + ":" + hero.getName());
+        return new Response("200", "successful");
+    }
+
+    @RequestMapping(value = "api/heroes", method = RequestMethod.POST)
+    @ResponseBody
+    public Hero addHero(@RequestBody Hero hero) {
+        System.out.println("MainController.addHero" + ":" + hero.getName());
+        hero.setId(200);
+        return hero;
+    }
+
+    @RequestMapping(value = "api/heroes/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public Response deleteHero(@PathVariable("id") Integer id) {
+        System.out.println("MainController.deleteHero" + ":" + id);
+        return new Response("200", "successful");
+    }
+
 }

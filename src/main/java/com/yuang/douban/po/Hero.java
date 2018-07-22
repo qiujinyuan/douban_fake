@@ -1,4 +1,4 @@
-package com.yuang.bbs.po;
+package com.yuang.douban.po;
 
 /**
  * 一句话描述基本功能
@@ -10,6 +10,8 @@ public class Hero {
 
     private int id;
     private String name;
+
+    public Hero(){}
 
     public Hero(int id, String name) {
         this.id = id;

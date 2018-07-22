@@ -1,8 +1,8 @@
-# 仿 一加论坛 web 应用开发
+# 仿 豆瓣 应用开发
 
 ## 架构
 
-1. 使用 SpringMVC, Hibernate, PostgreSQL
+1. 使用 SpringMVC, Hibernate, MySql
 2. 前端页面框架使用 Angular2, Bootstrap 和 JQuery 开发
 
 ## 开发步骤

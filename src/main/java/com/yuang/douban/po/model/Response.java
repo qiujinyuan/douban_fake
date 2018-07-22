@@ -1,4 +1,4 @@
-package com.yuang.bbs.po.model;
+package com.yuang.douban.po.model;
 
 /**
  * 返回响应对象
