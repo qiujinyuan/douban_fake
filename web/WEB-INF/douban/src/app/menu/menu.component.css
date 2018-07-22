@@ -1,0 +1,30 @@
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  /* 去掉左边的边距 */
+  margin-left: -15px;
+}
+
+.navbar-no-margin-bottom {
+  min-height: auto;
+  margin-bottom: 0px;
+  background-color: #545652;
+  border-radius: 0px;
+  border: 0px;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+      float: left;
+      margin: 0;
+    }
+    .navbar-nav > li {
+      float: left;
+    }
+    .navbar-nav > li > a {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      color: #d5d5d5;
+    }
+  }
