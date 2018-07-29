@@ -35,9 +35,7 @@
     </bean>
 
     <!--静态资源映射-->
-    <mvc:resources location="WEB-INF/dist/" mapping="/*.js" />
-    <mvc:resources location="WEB-INF/lib/" mapping="/lib/**" />
     <!--切记末尾加上 `/` -->
-    <mvc:resources location="WEB-INF/lib/fonts/" mapping="/fonts/**" />
+    <mvc:resources location="WEB-INF/dist/" mapping="/**" />
 
 </beans>

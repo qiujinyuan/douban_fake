@@ -15,6 +15,11 @@
 
 ### 后端代码编写
 
+## 经验
+
+1. 在 angular.json 文件中引入使用 npm 安装的第三方库，包括 js 和 css, 会自动打包到 dist 目录下的 scripts.js 和 styles.js 文件中，无需手动引入，只需要在 application-mvc.xml 配置静态资源映射
+    assets 目录下的所有文件也会自动打包到 dist 目录下的 assets 目录下，图片等可以当在该目录下，然后使用绝对路径进行访问，那么当运行 angular 客户端或是在服务器端下均可以进行访问
+
 
 ## 备忘
 

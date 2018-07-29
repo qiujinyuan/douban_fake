@@ -26,7 +26,7 @@ public class MainController {
      *
      * @return
      */
-    @RequestMapping(value = {"", "/", "/index", "/dashboard/**", "/detail/**", "/heroes/**"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"", "/", "/index", "/home/**", "/book/**", "/movie/**"}, method = RequestMethod.GET)
     public String index() {
         return "index";
     }
