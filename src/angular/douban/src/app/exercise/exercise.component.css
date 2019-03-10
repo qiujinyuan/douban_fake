@@ -1,0 +1,54 @@
+h1 em {
+  color: red;
+}
+
+h1>strong {
+  color: red;
+}
+
+#sidebar p {
+  font-style: italic;
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+h3 {
+  text-align: right;
+  font-size: 20pt;
+}
+
+span.highlight {
+  background-color: yellow
+}
+
+
+div {
+  text-align: justify;
+  font-family: 'source code pro';
+  font-style: italic;
+  font-variant: small-caps;
+  font-weight: normal;
+}
+
+
+h1 {
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+p {
+  white-space: pre;
+}
+
+/* 未被访问的链接 */
+a {
+  text-decoration: none;
+  background-color: #00B51D;
+  color: #FFF;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin: 0 2px 0 2px;
+  padding: 0.56rem 1.31rem;
+  line-height: 1;
+  border-radius: 0.125rem;
+}

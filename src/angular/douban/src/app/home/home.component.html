@@ -1,0 +1,166 @@
+<div class="container">
+  <div class="header">
+    <div>
+      <a href="/">
+        <img class="no-outline"
+             src="/assets/images/home/logo_db.png"
+             style="width: 9em; cursor: pointer;vertical-align: middle;"
+             alt="">
+      </a>
+    </div>
+    <div style="margin-left: 2em;">
+      <form>
+        <input type="text"
+               #searchStr
+               role="search"
+               class="no-outline"
+               style="width: 20em;line-height: 2;padding: 0;"
+               placeholder="书籍、电影、音乐、小组、小站、成员">
+        <button class="no-outline"
+                style="border-style: none; background-color: white;position: relative;left: -2em; line-height: 2;"
+                type="button"
+                (click)="search(searchStr.value)">
+          <img class="no-outline"
+               src="/assets/images/home/search_btn.png"
+               style="width: 1em; height: 1em; cursor: pointer; vertical-align: middle;"
+               alt="">
+        </button>
+      </form>
+    </div>
+    <div class="nav-menu">
+      <ul style="background-image: url(/assets/images/home/nav_logo.png);background-size: 100% 100%;">
+        <li>
+          <a routerLink="/book">读书</a>
+        </li>
+        <li>
+          <a routerLink="/movie">电影</a>
+        </li>
+        <li>
+          <a routerLink="/music">音乐</a>
+        </li>
+        <li>
+          <a routerLink="/group">小组</a>
+        </li>
+        <li>
+          <a routerLink="/city">同城</a>
+        </li>
+        <li>
+          <a routerLink="/fm">FM</a>
+        </li>
+        <li>
+          <a routerLink="/time">时间</a>
+        </li>
+        <li>
+          <a routerLink="/production">豆品</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <!-- /.navbar-collapse -->
+  <div class="content">
+    <div class="row">
+      登录
+    </div>
+    <div class="row">
+      热点
+    </div>
+    <div class="row">
+      豆瓣时间
+    </div>
+    <div class="row">
+      视频
+    </div>
+    <div class="row">
+      电影
+    </div>
+    <div class="row">
+      小组
+    </div>
+    <div class="row">
+      读书
+    </div>
+    <div class="row">
+      音乐
+    </div>
+    <div class="row">
+      豆品
+    </div>
+    <div class="row">
+      同城
+    </div>
+    <div class="row login-form">
+      <div class="col-md-3 col-md-offset-2 phone-image">
+      </div>
+      <div class="col-md-3">
+        <div class="row app">
+          <div class="row app-title">
+            <div class="col-md-12">
+              豆瓣 5.0
+            </div>
+          </div>
+          <div class="row app-link">
+            <a class="btn btn-primary btn-sm"
+               href="#"
+               role="button">下载豆瓣 App</a>
+            <div (mouseleave)="disappearDownScan()"
+                 (mouseenter)="showDownScan()"
+                 style="display: inline-block;position: absolute;">
+              <div *ngIf="!showScan">
+                <img [src]="downLinkImg"
+                     width="29.6"
+                     height="29.6"
+                     class="scan-image">
+              </div>
+              <div *ngIf="showScan">
+                <img [src]="downScanImg"
+                     width="240"
+                     height="240"
+                     class="scan-image-big">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <!-- 登陆表单 -->
+        <form class="right-form">
+          <div class="form-group">
+            <input type="email"
+                   #username
+                   class="form-control"
+                   id="exampleInputEmail1"
+                   placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password"
+                   #password
+                   class="form-control"
+                   id="exampleInputPassword1"
+                   placeholder="Password">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button (click)="login(username.value, password.value)"
+                      class="btn btn-info btn-sm btn-block">登陆豆瓣</button>
+            </div>
+            <div class="col-md-6">
+              <a class="btn btn-default btn-sm btn-block"
+                 routerLink="/register"
+                 role="button">注册账号</a>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> 记住我
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+
+  </div>
+</div>

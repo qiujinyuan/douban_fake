@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,21 +20,9 @@ import java.util.List;
 @RequestMapping("")
 public class MainController {
 
-    /**
-     * 配置多个访问路径，用于当刷新页面时浏览器发出请求时找不到资源返回 404
-     * 找不到资源 url 是通过 Angular 路由器生成的，用于导航页面的
-     * 此处的路径不能和 API 重复，否则会发生冲突
-     *
-     * @return
-     */
-    @RequestMapping(value = {"", "/", "/index", "/home/**", "/book/**", "/movie/**"}, method = RequestMethod.GET)
-    public String index() {
-        return "index";
-    }
-
     @RequestMapping(value = "api/heroes", method = RequestMethod.GET)
     @ResponseBody
-    public List<Hero> getHeroes(@RequestParam(value = "name", required = false) String name) {
+    public List<Hero> getHeroes(@RequestParam(value = "name", required = false) String name, HttpServletResponse response) {
         List<Hero> heroes = new ArrayList<>();
         if (!StringUtils.isEmpty(name)) {
             heroes.add(new Hero(1, "user01"));

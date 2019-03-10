@@ -1,0 +1,40 @@
+
+plugins {
+    id 'war'
+    id 'org.gretty' version '2.2.0'
+}
+
+apply plugin: 'java'
+
+
+group = 'com.yuang.douban'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+description = "fake a douban"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.hibernate:hibernate-agroal:5.3.4.Final'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.46'
+    compile group: 'com.alibaba', name: 'druid', version: '1.1.10'
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version:'4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version:'4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version:'4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version:'4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jdbc', version:'4.3.18.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context-support', version:'4.3.18.RELEASE'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version:'2.9.6'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version:'2.11.0'
+    compile group: 'log4j', name: 'log4j', version:'1.2.17'
+    compile group: 'org.freemarker', name: 'freemarker', version:'2.3.23'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    testCompile group: 'junit', name: 'junit', version:'4.12'
+}

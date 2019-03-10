@@ -1,20 +1,30 @@
 package com.yuang.douban.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.log4j.Logger;
 import org.apache.logging.log4j.core.config.ConfigurationSource;
 import org.apache.logging.log4j.core.config.Configurator;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
+import javax.sql.DataSource;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 
 /**
- * 一句话描述基本功能
+ * Spring 基于 Java 类进行配置
  * <p>
  * created by: @author yuang on @date 2018/7/12.
  */
@@ -23,6 +33,12 @@ import java.net.URL;
 @ComponentScan
 public class SpringConfig {
 
+
+    /**
+     * Log4j 日志记录类
+     *
+     * @return 注入日志 bean
+     */
     @Bean
     public static Logger logger() {
         String path = "/log4j.properties";
@@ -36,5 +52,63 @@ public class SpringConfig {
         }
         Logger logger = Logger.getLogger(Spring.class);
         return logger;
+    }
+
+    /**
+     * Hibernate session
+     *
+     * @param dataSource 数据源
+     * @return 数据库访问 session 入口
+     */
+    @Bean
+    public LocalSessionFactoryBean sessionFactory(DataSource dataSource) {
+        LocalSessionFactoryBean sfb = new LocalSessionFactoryBean();
+        sfb.setDataSource(dataSource);
+        sfb.setPackagesToScan(new String[]{"com.yuang.douban.po"});
+        Properties props = new Properties();
+        props.setProperty("dialect", "org.hibernate.dialect.MySQLDialect");
+        sfb.setHibernateProperties(props);
+        return sfb;
+    }
+
+    /**
+     * Druid 数据库连接池
+     *
+     * @return 注入数据源
+     */
+    @Bean
+    public DruidDataSource dataSource() throws IOException {
+        DruidDataSource ds = new DruidDataSource();
+        Properties props = PropertiesLoaderUtils.loadAllProperties("db.properties");
+        ds.setDriverClassName("com.mysql.jdbc.Driver");
+        ds.setUrl(props.getProperty("url"));
+        ds.setUsername(props.getProperty("username"));
+        ds.setPassword(props.getProperty("password"));
+        ds.setMaxActive(20);
+        return ds;
+    }
+
+
+    /**
+     * 转换异常
+     *
+     */
+    @Bean
+    public BeanPostProcessor persistenceTransaction() {
+        return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+
+    /**
+     * 事务管理器
+     *
+     * @param sessionFactory session 工厂 bean
+     * @return
+     */
+    @Bean
+    public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {
+        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory);
+        return transactionManager;
     }
 }
