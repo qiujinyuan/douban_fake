@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   title = '豆瓣';
   showScan = false;
 
+  notSure: any = 4;
+
   downLinkImg = '/assets/images/home/icon_qrcode_green.png';
   downScanImg = '/assets/images/home/doubanapp_qrcode.png';
 
@@ -18,7 +20,26 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
+    let prettySure: Object = 4;
+    // prettySure.toFixed();
+    let list: any[] = [1, 'aa', true];
+    try {
+      const neverVar: never = error('123');
+      const unsuable1: never = neverVar;
+      console.log(unsuable1);
+
+    } catch (e) {
+      console.log(e);
+    } finally {
+      console.log('catch error');
+    }
+
+    function error(message: string): never {
+      throw new Error(message);
+    }
+
   }
+
 
   search(str: string): void {
     console.log(str);

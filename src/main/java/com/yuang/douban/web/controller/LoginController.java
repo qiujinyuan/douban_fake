@@ -3,7 +3,8 @@ package com.yuang.douban.web.controller;
 import com.yuang.douban.po.User;
 import com.yuang.douban.po.model.Response;
 import com.yuang.douban.service.UserService;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,7 @@ import java.util.Objects;
 public class LoginController {
 
     @Autowired
-    Logger logger;
+    static final Logger logger = LogManager.getLogger(LoginController.class);
 
     @Autowired
     UserService userService;

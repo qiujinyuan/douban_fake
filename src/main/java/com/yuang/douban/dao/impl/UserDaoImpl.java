@@ -2,7 +2,7 @@ package com.yuang.douban.dao.impl;
 
 import com.yuang.douban.dao.UserDao;
 import com.yuang.douban.po.User;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;

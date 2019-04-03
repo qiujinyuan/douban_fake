@@ -1,7 +1,8 @@
 package com.yuang.douban.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.ConfigurationSource;
 import org.apache.logging.log4j.core.config.Configurator;
 import org.hibernate.SessionFactory;
@@ -15,7 +16,6 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import javax.sql.DataSource;
-import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -41,8 +41,9 @@ public class SpringConfig {
      */
     @Bean
     public static Logger logger() {
-        String path = "/log4j.properties";
+        String path = "/conf/log4j2.xml";
         URL url = SpringConfig.class.getResource(path);
+        System.out.println("Log4j: url" + url);
         ConfigurationSource source;
         try {
             source = new ConfigurationSource(new FileInputStream(new File(url.getPath())), url);
@@ -50,7 +51,7 @@ public class SpringConfig {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        Logger logger = Logger.getLogger(Spring.class);
+        Logger logger = LogManager.getLogger(LogManager.ROOT_LOGGER_NAME);
         return logger;
     }
 
@@ -79,7 +80,7 @@ public class SpringConfig {
     @Bean
     public DruidDataSource dataSource() throws IOException {
         DruidDataSource ds = new DruidDataSource();
-        Properties props = PropertiesLoaderUtils.loadAllProperties("db.properties");
+        Properties props = PropertiesLoaderUtils.loadAllProperties("conf/db.properties");
         ds.setDriverClassName("com.mysql.jdbc.Driver");
         ds.setUrl(props.getProperty("url"));
         ds.setUsername(props.getProperty("username"));

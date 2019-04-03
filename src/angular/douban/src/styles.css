@@ -4,24 +4,16 @@ html {
   font-size: 16px;
 }
 
-h3 {
-  color: red;
-  text-align: left;
-  font-size: 8pt;
-}
-
 body {
-  font-size: 100%;
-}
+  /*  字体  */
+  font-family: -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
 
-h1 {
-  font-size: 3.75em;
-}
+  /*  字号 */
+  font-size: 16px;
 
-h2 {
-  font-size: 2.5em;
-}
+  /*  字体颜色  */
+  color: #333;
 
-p {
-  font-size: 0.875em;
+  /* 行距 */
+  line-height: 1.75;
 }

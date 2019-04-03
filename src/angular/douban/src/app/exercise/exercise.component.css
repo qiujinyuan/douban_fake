@@ -26,8 +26,7 @@ div {
   text-align: justify;
   font-family: 'source code pro';
   font-style: italic;
-  font-variant: small-caps;
-  font-weight: normal;
+  font-weight: bold;
 }
 
 
@@ -45,10 +44,47 @@ a {
   text-decoration: none;
   background-color: #00B51D;
   color: #FFF;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  min-width: 4rem;
+  text-align: center;
   display: inline-block;
   margin: 0 2px 0 2px;
   padding: 0.56rem 1.31rem;
   line-height: 1;
   border-radius: 0.125rem;
+}
+
+/* d3 */
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+
+/* 坐标轴样式 */
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.selected {
+  fill: red;
+  stroke: brown;
+}
+
+.MyRect {
+  fill: steelblue;
+}
+
+.MyText {
+  fill: white;
+  text-anchor: middle;
 }
