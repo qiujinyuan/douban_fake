@@ -1,0 +1,129 @@
+h1 em {
+  color: red;
+}
+
+h1>strong {
+  color: red;
+}
+
+#sidebar p {
+  font-style: italic;
+  text-align: right;
+  margin-top: 0.5em;
+}
+
+h3 {
+  text-align: right;
+  font-size: 20pt;
+}
+
+span.highlight {
+  background-color: yellow
+}
+
+
+div {
+  text-align: justify;
+  font-family: 'source code pro';
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+h1 {
+  text-transform: uppercase;
+  white-space: pre;
+}
+
+p {
+  white-space: pre;
+}
+
+/* 未被访问的链接 */
+a {
+  text-decoration: none;
+  background-color: #00B51D;
+  color: #FFF;
+  font-size: 1rem;
+  min-width: 4rem;
+  text-align: center;
+  display: inline-block;
+  margin: 0 2px 0 2px;
+  padding: 0.56rem 1.31rem;
+  line-height: 1;
+  border-radius: 0.125rem;
+}
+
+/* d3 */
+:host ::ng-deep .d3 {
+  .line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 2px;
+  }
+
+
+  /* 坐标轴样式 */
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+  }
+
+  .selected {
+    fill: red;
+    stroke: brown;
+  }
+
+  .MyRect {
+    fill: steelblue;
+  }
+
+  .MyText {
+    fill: white;
+    text-anchor: middle;
+  }
+}
+
+.svg {
+  fill: green;
+  width: 20rem;
+  height: 20rem;
+
+  .log-svg {
+    background: url(/assets/svg/circle.svg) no-repeat center;
+    height: 10rem;
+    width: 10rem;
+  }
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    display: inline;
+  }
+
+  svg {
+    display: inline;
+  }
+
+  .red {
+    fill: red;
+  }
+
+  .fancy {
+    fill: none;
+    stroke: black;
+    stroke-width: 3pt;
+  }
+}
+
+.link-active {
+  text-decoration: line-through;
+  color: black;
+}

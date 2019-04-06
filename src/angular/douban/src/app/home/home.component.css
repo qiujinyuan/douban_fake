@@ -111,3 +111,8 @@ li a {
   text-align: center;
   margin: 1em 1em;
 }
+
+.link-active {
+  text-decoration: line-through;
+  color: black;
+}
