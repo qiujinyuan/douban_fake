@@ -1,11 +1,25 @@
 .bad {
-    color: red;
+  color: red;
 }
 
 .curly {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .special {
-    font-style: italic;
+  font-style: italic;
+}
+
+.selected {
+  font-style: italic;
+  color: red;
+}
+
+li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+
+li.selected:hover {
+  background-color: #BBD8DC;
 }

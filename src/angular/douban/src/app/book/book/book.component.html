@@ -14,12 +14,14 @@
   </div>
 </div>
 <ul>
-  <li *ngFor="let book of currentBooks; let i = index;">
-    {{i + 1}}-{{book.toString()}}
-    <p>
-      <app-book-detail *ngIf="book.isNew" (deleteRequest)="deleteHero($event)"
-                       [book]="book"></app-book-detail>
-    </p>
+  <li *ngFor="let book of currentBooks; let i = index;"
+      [class.selected]="book.id == selectedBookId"
+      [routerLink]="'/book/' + book.id">
+    {{book.id + '-' + book.name + '-' + book.author + '-' + book.publishTime}}
+    <!-- <p>
+      <app-book-detail *ngIf="book.isNew"
+                       (deleteRequest)="deleteHero($event)"></app-book-detail>
+    </p> -->
   </li>
 </ul>
 <!-- <table border=1>

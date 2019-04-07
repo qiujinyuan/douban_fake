@@ -1,0 +1,22 @@
+<div id="items">
+  <ul>
+    <a href="javascript:void(0)"
+       [routerLinkActive]="'link-active'"
+       routerLink="/home">back</a>
+    <a routerLink="/exercise"
+       [routerLinkActive]="'link-active'">练习</a>
+    <a href="javascript:void(0)"
+       routerLink="./css"
+       [routerLinkActive]="'link-active'"
+       target="_self">css</a>
+    <a href="javascript:void(0)"
+       routerLink="./d3"
+       [routerLinkActive]="'link-active'"
+       target="_self">d3</a>
+    <a href="javascript:void(0)"
+       routerLink="svg"
+       [routerLinkActive]="'link-active'"
+       target="_self">svg</a>
+  </ul>
+</div>
+<router-outlet></router-outlet>
