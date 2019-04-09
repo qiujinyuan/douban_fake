@@ -1,0 +1,51 @@
+.svg {
+  fill: green;
+
+  .log-svg {
+    background: url(/assets/svg/circle.svg) no-repeat center;
+    height: 10rem;
+    width: 10rem;
+  }
+
+  img {
+    width: 10rem;
+    height: 10rem;
+    display: inline;
+  }
+
+  svg {
+    display: inline;
+  }
+
+  .red {
+    fill: red;
+  }
+
+  .fancy {
+    fill: none;
+    stroke: black;
+    stroke-width: 3pt;
+  }
+}
+
+circle {
+  stroke-width: 5;
+  stroke: #f00;
+  fill: #f00;
+}
+
+circle:hover {
+  stroke: #090;
+  fill: #fff;
+}
+
+.line-dot circle {
+  stroke-width: 5;
+  stroke: black;
+  fill: black;
+}
+
+.line-dot circle:hover {
+  stroke: #090;
+  fill: #090;
+}

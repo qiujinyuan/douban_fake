@@ -16,4 +16,6 @@ body {
 
   /* 行距 */
   line-height: 1.75;
+
+  min-height: 420px;
 }

@@ -5,7 +5,7 @@ import * as d3 from 'd3';
 @Component({
   selector: 'app-exercise-d3',
   templateUrl: './exercise-d3.component.html',
-  styleUrls: ['./exercise-d3.component.css', '../exercise.component.scss', ]
+  styleUrls: ['./exercise-d3.component.scss', '../exercise.component.scss', ]
 })
 export class ExerciseD3Component implements OnInit {
 
