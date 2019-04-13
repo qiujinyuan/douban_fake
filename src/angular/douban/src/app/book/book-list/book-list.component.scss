@@ -1,0 +1,67 @@
+.bad {
+  color: red;
+}
+
+.curly {
+  font-size: 1.8rem;
+}
+
+.special {
+  font-style: italic;
+}
+
+.selected {
+  font-style: italic;
+  color: red;
+}
+
+li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+
+li.selected:hover {
+  background-color: #BBD8DC;
+}
+
+a {
+  text-decoration: none;
+}
+
+.new-book {
+  font-size: 14px;
+  line-height: 1.25;
+  padding: 1rem;
+
+  .cover>img {
+    width: 115px;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  .cover>img:hover {
+    border: 1px solid transparent;
+    width: 113px;
+    opacity: 1.0;
+  }
+
+  .book-name,
+  .author {
+    width: 6rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+}
+
+.new-book-list {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    // flex-grow: 1;
+    // justify-content: center;
+  }
+}

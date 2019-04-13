@@ -6,6 +6,11 @@
     <a routerLink="/exercise"
        [routerLinkActive]="'link-active'">练习</a>
     <a href="javascript:void(0)"
+       routerLink="./"
+       [routerLinkActive]="'link-active'"
+       [routerLinkActiveOptions]="{exact:true}"
+       target="_self">angular</a>
+    <a href="javascript:void(0)"
        routerLink="./css"
        [routerLinkActive]="'link-active'"
        target="_self">css</a>

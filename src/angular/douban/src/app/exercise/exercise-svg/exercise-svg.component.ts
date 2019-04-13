@@ -28,11 +28,13 @@ export class ExerciseSvgComponent implements OnInit {
       .serializeToString(document.getElementById('mySvg'));
     const img = new Image();
     const svg = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+    // @ts-ignore
     const DOMURL = self.URL || self.webkitURL || self;
     const url = DOMURL.createObjectURL(svg);
     img.src = url;
     img.onload = function () {
       const canvas = document.getElementById('canvas');
+      // @ts-ignore
       const ctx = canvas.getContext('2d');
       ctx.drawImage(img, 0, 0);
     };

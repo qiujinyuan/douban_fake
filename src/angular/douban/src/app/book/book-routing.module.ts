@@ -3,10 +3,25 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BookComponent } from './book/book.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookListComponent } from './book-list/book-list.component';
 
 const routes: Routes = [
-  { path: 'book', component: BookComponent, data: { animation: 'books' } },
-  { path: 'book/:id', component: BookDetailComponent, data: { animation: 'book' } },
+  {
+    path: 'book',
+    component: BookComponent,
+    children: [
+      {
+        path: '',
+        component: BookListComponent,
+        data: { animation: 'books' }
+      },
+      {
+        path: ':id',
+        component: BookDetailComponent,
+        data: { animation: 'book' }
+      }
+    ]
+  }
 ];
 
 @NgModule({

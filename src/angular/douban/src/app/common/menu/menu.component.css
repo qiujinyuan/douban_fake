@@ -1,0 +1,49 @@
+@media (min-width: 768px) {
+  .navbar-nav {
+    float: left;
+    margin: 0;
+  }
+
+  .navbar-nav>li {
+    float: left;
+  }
+
+  .navbar-nav>li>a {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #d5d5d5;
+  }
+}
+
+.navbar {
+  background-color: #545652;
+}
+
+.navbar>a {
+  display: inline-block;
+  min-width: 2rem;
+  color: #d5d5d5;
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 0.75rem;
+  vertical-align: text-top;
+}
+
+.navbar>a:first-child {
+  margin-left: 0.75rem;
+}
+
+.navbar>a:hover, .navbar>a.active-link {
+  color: #ffffff;
+}
+
+a.nav-menu-right {
+  position: absolute;
+  right: 0.75rem;
+  top: 0;
+  line-height: 1.75rem;
+}
+
+a.download {
+  right: 6rem;
+}

@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MovieComponent } from './movie/movie.component';
-import { MenuComponent } from './menu/menu.component';
+// import { MenuComponent } from './menu/menu.component';
 // import { BookComponent } from './book/book.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -37,7 +37,7 @@ import { ExerciseModule } from './exercise/exercise.module';
   declarations: [
     AppComponent,
     MovieComponent,
-    MenuComponent,
+    // MenuComponent,
     // BookComponent,
     HomeComponent,
     RegisterComponent,

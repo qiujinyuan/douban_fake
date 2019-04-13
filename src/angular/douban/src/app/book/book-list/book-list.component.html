@@ -1,0 +1,33 @@
+<div style="width: 50%">
+  <span>新书速递:</span>
+  <div style="display: inline-block;float: right;">
+    <button [disabled]="pagination.lastBtnDisabled"
+            [attr.aria-label]="actionName"
+            (click)="last()">&lt;</button>
+    <button (click)="next()">&gt;</button>
+    <span>{{pagination.currentPage}}</span>
+  </div>
+</div>
+<ul>
+  <li *ngFor="let book of currentBooks; let i = index;"
+      [class.selected]="book.id == selectedBookId"
+      [routerLink]="'/book/' + book.id">
+    {{book.id + '-' + book.name + '-' + book.author + '-' + book.publishTime}}
+  </li>
+</ul>
+<div class="new-book-list">
+  <div class="new-book"
+       *ngFor="let book of books; let i = index;"
+       [class.selected]="book.id == selectedBookId">
+    <div [routerLink]="'/book/' + book.id"
+         class="cover">
+      <img src="\assets\images\book\s31290337.jpg"
+           alt="{{book.name}}">
+    </div>
+    <div class="book-name"><a href="#">{{book.name}}</a></div>
+    <div class="author">{{book.author}}</div>
+  </div>
+</div>
+<input [ngModel]="keyword"
+       (ngModelChange)="search($event)">
+without NgModel

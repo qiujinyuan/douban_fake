@@ -1,0 +1,7 @@
+@media print {
+    p {
+      font-weight: bold;
+      font-family: times, serif;
+      font-size: 10px;
+    }
+  }

@@ -6,6 +6,7 @@ import { ExerciseHomeComponent } from './exercise-home/exercise-home.component';
 import { ExerciseCssComponent } from './exercise-css/exercise-css.component';
 import { ExerciseSvgComponent } from './exercise-svg/exercise-svg.component';
 import { ExerciseD3Component } from './exercise-d3/exercise-d3.component';
+import { ExerciseAngularComponent } from './exercise-angular/exercise-angular.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
           {
             path: 'd3',
             component: ExerciseD3Component
+          },
+          {
+            path: '',
+            component: ExerciseAngularComponent
           }
         ]
       }
