@@ -49,7 +49,7 @@ public class MainController {
     @ResponseBody
     public Response updateHero(@RequestBody Hero hero) {
         System.out.println("MainController.updateHero" + ":" + hero.getName());
-        return new Response("200", "successful");
+        return new Response("200", "successful", null);
     }
 
     @RequestMapping(value = "api/heroes", method = RequestMethod.POST)
@@ -64,7 +64,7 @@ public class MainController {
     @ResponseBody
     public Response deleteHero(@PathVariable("id") Integer id) {
         System.out.println("MainController.deleteHero" + ":" + id);
-        return new Response("200", "successful");
+        return new Response("200", "successful", null);
     }
 
 }

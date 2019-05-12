@@ -1,5 +1,7 @@
 package com.yuang.douban.po.model;
 
+import java.util.Map;
+
 /**
  * 返回响应对象
  * <p>
@@ -17,9 +19,17 @@ public class Response {
      */
     private String message;
 
-    public Response(String code, String message) {
+    /**
+     * 返回数据
+     * @param code
+     * @param message
+     */
+    private Map data;
+
+    public Response(String code, String message, Map data) {
         this.code = code;
         this.message = message;
+        this.data = data;
     }
 
     public String getCode() {
@@ -36,5 +46,13 @@ public class Response {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Map getData() {
+        return data;
+    }
+
+    public void setData(Map data) {
+        this.data = data;
     }
 }
